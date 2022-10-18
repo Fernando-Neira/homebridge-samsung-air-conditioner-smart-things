@@ -12,7 +12,7 @@ export class SamsungAPI {
   static async getDevices(token) {
     const { data: { items = [] } = {} } = await Axios.get(`${HOST}`, this.setToken(token));
 
-    return items.filter(item => item.name === AC_DEVICE_NAME);
+    return items.filter(item => item.label === AC_DEVICE_NAME);
   }
 
   static async getDeviceStatus(deviceId, token) {
